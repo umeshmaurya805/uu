@@ -59,7 +59,7 @@
     <textarea style="display: none" id="getLang" name="getLang">{{this.lang}}</textarea>
     <textarea style="display: none" id="getTheme" name="getTheme">{{this.theme}}</textarea>
     {{#if this.isError}}
-    <div class="msg" id="msg" style="background-color: red"> ⚠️ Error</div>
+    <div class="msg" id="msg" style="background-color: red">{{this.stderr}}</div>
     {{else if this.msg}}
     <div class="msg" id="msg">{{this.msg}} <br />
         CPU Time : {{this.time}} ms<br />
@@ -78,9 +78,12 @@
     <div id="editor"></div>
     {{!-- {{>footer}} --}}
     <script type="text/javascript">
+        {{#unless this.isError}}
         $('#msg').fadeOut(4000, function () {
             $(this).remove();
         });</script>
+        {{/unless}}
+
 
 </body>
 

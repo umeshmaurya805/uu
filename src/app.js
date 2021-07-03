@@ -78,6 +78,7 @@ app.post("", async(req, res) => {
       lang: req.body["select-language"],
       stdin: req.body.input,
       stdout: data.stdout,
+      stderr:data.stderr,
       msg: "Compiled",
       time: data.cpuUsage,
       memory: data.memoryUsage,
